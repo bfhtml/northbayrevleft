@@ -1,0 +1,230 @@
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+.eyebrow { /* header thing below the navbar. for titling pages or giving context to a below list etc */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: var(--cream-base);
+    border-style: solid;
+    border-color: var(--blue);
+    border-width: 1rem 2rem;
+}
+
+    .eyebrow h1 {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin: 0 0 5px;
+    }
+
+  /* generic "field" = full saturated ground, padded, holding an inset panel */
+.field {
+    width: fit-content;
+    background: var(--pine);
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* still centers the panel horizontally within the field */
+}
+ 
+  .field--pine     { background: var(--pine); }
+  .field--oxblood  { background: var(--bloodred-bg); }
+  .field--blue     { background: var(--blue); }
+  .field--charcoal {
+    background: var(--charcoal);
+    padding: 32px 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  /* inset panel sitting inside a field */
+.panel {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-self: stretch;
+    width: min(760px, 50vw);
+    text-align: center;
+    background: var(--cream-base);
+    border-style: solid;
+    border-color: var(--pine);
+    border-radius: 12px;
+    border-width: 1rem 2rem;
+}
+
+.panel2 {
+    background: var(--cream-base);
+    border-style: solid;
+    border-color: var(--blue);
+    border-width: 1rem 2rem;
+    border-radius: 48px;
+    padding: 60px 80px;
+    width: min(760px, 85vw);
+    text-align: center;
+}
+
+    .panel h1 {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin: 0 0 28px;
+    }
+
+    .panel p {
+        font-size: 22px;
+        margin: 0 0 18px;
+        line-height: 1.4;
+    }
+
+        .panel p:last-child {
+            margin-bottom: 0;
+        }
+
+    .panel li {
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        line-height: 125%;
+    }
+ 
+  /* header / nav inside the hero panel */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+    font-size: 14px;
+  }
+
+/* Footer — full-width box across bottom of page, three columns */
+.footer {
+    flex-shrink: 0; /* keep the footer's own height fixed regardless of hero size */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: var(--rust);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+    .footer span {
+        font-size: 20px;
+        color: var(--rust-text);
+    }
+ 
+  .nav__brand { font-weight: 600; }
+  .nav__links { display: flex; gap: 20px; }
+ 
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+ 
+  .eyebrow--rust { color: var(--rust); }
+  .eyebrow--pine { color: var(--pine); }
+ 
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 16px;
+  }
+ 
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+ 
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+ 
+  .panel--card p { font-size: 15px; margin-bottom: 20px; }
+ 
+  .btn {
+    background: var(--bloodred-bg);
+    color: var(--bloodred-fg);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+ 
+  .btn:hover { opacity: 0.9; }
+ 
+  .tags { display: flex; gap: 10px; }
+ 
+  .tag {
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+ 
+  .tag--ochre { background: var(--ochre); color: var(--ochre-text); }
+  .tag--rust  { background: var(--rust);  color: var(--rust-text); }
+ 
+  .footer__note { font-size: 13px; color: var(--charcoal-text); }
+  .footer__meta { font-size: 13px; color: var(--charcoal-muted); }
+
+@media (max-width: 700px) {
+    .nav2 {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav__cta {
+        position: static;
+        transform: none;
+        order: -1;
+        align-self: flex-end;
+    }
+
+    .nav__links {
+        gap: 24px;
+        font-size: 16px;
+    }
+
+    .panel {
+        padding: 40px 32px;
+        border-radius: 32px;
+    }
+
+        .panel h1 {
+            font-size: 26px;
+        }
+
+        .panel p {
+            font-size: 17px;
+        }
+
+    .footer2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-align: center;
+    }
+}
